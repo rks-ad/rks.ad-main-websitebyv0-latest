@@ -72,13 +72,13 @@ export function ThemeToggle() {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       onClick={toggleTheme}
-      className="fixed top-4 right-4 z-50 p-2 rounded-full bg-amber-500/20 border border-amber-500/30 hover:border-amber-500 backdrop-blur-sm transition-all"
+      className="fixed top-4 right-4 z-50 p-1.5 rounded-full bg-amber-500/20 border border-amber-500/30 hover:border-amber-500 backdrop-blur-sm transition-all"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
-        <Sun className="w-5 h-5 text-amber-400" />
+        <Sun className="w-4 h-4 text-amber-400" />
       ) : (
-        <Moon className="w-5 h-5 text-amber-400" />
+        <Moon className="w-4 h-4 text-amber-400" />
       )}
     </motion.button>
   )
