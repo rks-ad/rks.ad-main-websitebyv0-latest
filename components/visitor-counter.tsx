@@ -92,18 +92,18 @@ export function VisitorCounter() {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.5, duration: 0.6 }}
-      className="fixed top-8 right-8 z-50"
+      className="fixed md:fixed top-32 md:top-8 right-4 md:right-8 z-50"
     >
       <div className="relative group">
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
-        <div className="relative bg-gradient-to-br from-slate-900 to-slate-950 rounded-full p-4 border border-amber-500/20 shadow-lg">
-          <div className="text-center">
-            <p className="text-xs text-gray-400 mb-1">Total Hits</p>
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
+        <div className="relative bg-gradient-to-br from-slate-900 to-slate-950 rounded-2xl p-3 md:p-4 border border-amber-500/20 shadow-lg">
+          <div className="text-center whitespace-nowrap">
+            <p className="text-xs md:text-xs text-gray-400 mb-1">📊 Total Hits</p>
             <motion.p
               key={displayHits}
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              className="text-2xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent"
+              className="text-lg md:text-2xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent"
             >
               {displayHits.toLocaleString()}
             </motion.p>

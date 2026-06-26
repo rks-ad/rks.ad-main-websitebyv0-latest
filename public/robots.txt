@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /.next/
+Disallow: /private/
+
+Sitemap: https://rks.ad/sitemap.xml
+Sitemap: https://www.rks.ad/sitemap.xml
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
+
+# User-agents
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
