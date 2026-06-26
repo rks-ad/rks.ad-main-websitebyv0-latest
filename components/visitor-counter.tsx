@@ -92,13 +92,13 @@ export function VisitorCounter() {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.5, duration: 0.6 }}
-      className="fixed md:fixed top-32 md:top-8 right-4 md:right-8 z-50"
+      className="relative"
     >
       <div className="relative group">
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
-        <div className="relative bg-gradient-to-br from-slate-900 to-slate-950 rounded-2xl p-3 md:p-4 border border-amber-500/20 shadow-lg">
+        <div className="relative bg-gradient-to-br from-slate-900 to-slate-950 dark:from-slate-900 dark:to-slate-950 light:from-gray-100 light:to-gray-50 rounded-2xl p-3 md:p-4 border border-amber-500/20 shadow-lg">
           <div className="text-center whitespace-nowrap">
-            <p className="text-xs md:text-xs text-gray-400 mb-1">📊 Total Hits</p>
+            <p className="text-xs md:text-xs text-gray-400 dark:text-gray-400 light:text-gray-600 mb-1">📊 Total Hits</p>
             <motion.p
               key={displayHits}
               initial={{ y: 10, opacity: 0 }}

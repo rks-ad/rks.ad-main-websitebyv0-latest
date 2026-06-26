@@ -36,10 +36,10 @@ export function ClientsCounter() {
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
-      className="py-12 md:py-16 px-4 bg-gradient-to-r from-amber-500/5 via-purple-500/5 to-cyan-500/5 border-y border-gray-800"
+      className="py-6 md:py-8 px-4 bg-gradient-to-r from-amber-500/5 via-purple-500/5 to-cyan-500/5 border-y border-gray-800"
     >
       <div className="max-w-4xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 text-center">
           {/* Clients Served */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

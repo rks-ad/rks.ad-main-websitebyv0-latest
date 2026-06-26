@@ -19,13 +19,21 @@ export function HeroSection() {
   const [hoveredAdIndex, setHoveredAdIndex] = useState<number | null>(null)
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start pt-12 md:justify-center md:pt-0 px-4 relative">
+    <div className="min-h-screen flex flex-col items-center justify-start pt-8 md:justify-center md:pt-0 px-4 relative">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="text-center w-full"
       >
+        {/* Logo Placeholder */}
+        <div className="mb-4 md:mb-6">
+          <img
+            src="/logo.svg"
+            alt="RKS.Ad Logo"
+            className="h-20 md:h-28 mx-auto"
+          />
+        </div>
 
         {/* Main Domain Name - Mobile Optimized */}
         <div className="mb-4 md:mb-8">
@@ -116,15 +124,9 @@ export function HeroSection() {
                 </motion.div>
               ))}
 
-              <motion.span
-                className="text-5xl md:text-8xl font-bold text-teal-500 h-full flex items-end pb-0"
-                animate={{
-                  rotate: hoveredAdIndex !== null ? 360 : 0,
-                }}
-                transition={{ duration: 0.5 }}
-              >
+              <span className="text-5xl md:text-8xl font-bold text-teal-500 h-full flex items-end pb-0">
                 d
-              </motion.span>
+              </span>
             </div>
           </div>
         </div>
@@ -171,7 +173,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-xs md:text-base text-gray-400 mb-4 md:mb-8 max-w-2xl"
+          className="text-xs md:text-base text-gray-400 mb-2 md:mb-4 max-w-2xl"
         >
           💼 Legal Counsel | 🎯 Professional | ✅ 1100+ Clients
         </motion.p>
