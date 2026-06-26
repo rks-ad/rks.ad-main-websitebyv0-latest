@@ -180,17 +180,81 @@ export function HeroSection() {
 
         {/* Practice Areas */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="flex flex-wrap justify-center gap-1.5 md:gap-2 text-xs md:text-sm mb-0 md:mb-2"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="py-0 md:py-2 px-4 bg-transparent border-0"
+          style={{ backgroundColor: 'transparent' }}
         >
-          <span className="px-2 md:px-3 py-0.5 bg-blue-500/10 border border-blue-500/30 rounded-full">⚖️ Civil</span>
-          <span className="px-2 md:px-3 py-0.5 bg-red-500/10 border border-red-500/30 rounded-full">🚔 Criminal</span>
-          <span className="px-2 md:px-3 py-0.5 bg-purple-500/10 border border-purple-500/30 rounded-full">💼 Corporate</span>
-          <span className="px-2 md:px-3 py-0.5 bg-pink-500/10 border border-pink-500/30 rounded-full">👨‍👩‍👧‍👦 Family</span>
-          <span className="px-2 md:px-3 py-0.5 bg-amber-500/10 border border-amber-500/30 rounded-full">🏛️ Tribunals</span>
-          <span className="px-2 md:px-3 py-0.5 bg-green-500/10 border border-green-500/30 rounded-full">🏢 High Court</span>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 text-center">
+              {/* Civil */}
+              <motion.div className="hover:scale-105 transition-transform duration-300 cursor-pointer group">
+                <motion.div
+                  whileHover={{ rotate: 10 }}
+                  className="text-4xl md:text-6xl mb-2 group-hover:scale-110 transition-transform duration-300"
+                >
+                  ⚖️
+                </motion.div>
+                <p className="text-gray-400 text-sm md:text-base font-semibold">Civil</p>
+              </motion.div>
+
+              {/* Criminal */}
+              <motion.div className="hover:scale-105 transition-transform duration-300 cursor-pointer group">
+                <motion.div
+                  whileHover={{ rotate: -10 }}
+                  className="text-4xl md:text-6xl mb-2 group-hover:scale-110 transition-transform duration-300"
+                >
+                  🚔
+                </motion.div>
+                <p className="text-gray-400 text-sm md:text-base font-semibold">Criminal</p>
+              </motion.div>
+
+              {/* Corporate */}
+              <motion.div className="hover:scale-105 transition-transform duration-300 cursor-pointer group">
+                <motion.div
+                  whileHover={{ rotate: 10 }}
+                  className="text-4xl md:text-6xl mb-2 group-hover:scale-110 transition-transform duration-300"
+                >
+                  💼
+                </motion.div>
+                <p className="text-gray-400 text-sm md:text-base font-semibold">Corporate</p>
+              </motion.div>
+
+              {/* Family */}
+              <motion.div className="hover:scale-105 transition-transform duration-300 cursor-pointer group">
+                <motion.div
+                  whileHover={{ rotate: -10 }}
+                  className="text-4xl md:text-6xl mb-2 group-hover:scale-110 transition-transform duration-300"
+                >
+                  👨‍👩‍👧‍👦
+                </motion.div>
+                <p className="text-gray-400 text-sm md:text-base font-semibold">Family</p>
+              </motion.div>
+
+              {/* Tribunals */}
+              <motion.div className="hover:scale-105 transition-transform duration-300 cursor-pointer group">
+                <motion.div
+                  whileHover={{ rotate: 10 }}
+                  className="text-4xl md:text-6xl mb-2 group-hover:scale-110 transition-transform duration-300"
+                >
+                  🏛️
+                </motion.div>
+                <p className="text-gray-400 text-sm md:text-base font-semibold">Tribunals</p>
+              </motion.div>
+
+              {/* High Court */}
+              <motion.div className="col-span-2 md:col-span-1 hover:scale-105 transition-transform duration-300 cursor-pointer group">
+                <motion.div
+                  whileHover={{ rotate: -10 }}
+                  className="text-4xl md:text-6xl mb-2 group-hover:scale-110 transition-transform duration-300"
+                >
+                  🏢
+                </motion.div>
+                <p className="text-gray-400 text-sm md:text-base font-semibold">High Court</p>
+              </motion.div>
+            </div>
+          </div>
         </motion.div>
       </motion.div>
     </div>

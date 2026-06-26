@@ -1,9 +1,25 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Briefcase, Calendar } from 'lucide-react'
 
 export function ActionSection() {
+  const [isLight, setIsLight] = React.useState(false)
+
+  React.useEffect(() => {
+    const main = document.querySelector('main')
+    setIsLight(main?.getAttribute('data-theme') === 'light')
+
+    const handleThemeChange = () => {
+      const main = document.querySelector('main')
+      setIsLight(main?.getAttribute('data-theme') === 'light')
+    }
+
+    window.addEventListener('themechange', handleThemeChange)
+    return () => window.removeEventListener('themechange', handleThemeChange)
+  }, [])
+
   const actions = [
     {
       icon: Mail,
@@ -62,7 +78,19 @@ export function ActionSection() {
                 className="group relative"
               >
                 {/* Card */}
-                <div className="relative bg-slate-900/80 backdrop-blur-sm border border-gray-700 group-hover:border-amber-500/80 rounded-xl md:rounded-2xl p-3 md:p-8 transition-all duration-300 overflow-hidden">
+                <div 
+                  className="relative backdrop-blur-sm border rounded-xl md:rounded-2xl p-3 md:p-8 transition-all duration-300 overflow-hidden"
+                  style={{
+                    backgroundColor: isLight ? '#f3f4f6' : 'rgb(15, 23, 42, 0.8)',
+                    borderColor: isLight ? '#d1d5db' : 'rgb(55, 65, 81)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = isLight ? '#92400e' : 'rgb(217, 119, 6, 0.8)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = isLight ? '#d1d5db' : 'rgb(55, 65, 81)'
+                  }}
+                >
                   {/* Shine effect on hover */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 opacity-0 group-hover:opacity-30 bg-gradient-to-r from-transparent via-amber-200 to-transparent"></div>
 
@@ -75,11 +103,22 @@ export function ActionSection() {
                       <Icon className="w-5 md:w-8 h-5 md:h-8 text-white" />
                     </motion.div>
 
-                    <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-2 group-hover:text-amber-400 transition-colors">
+                    <h3 
+                      className="text-base md:text-2xl font-bold mb-1 md:mb-2 group-hover:text-amber-400 transition-colors"
+                      style={{ color: isLight ? '#0f172a' : '#ffffff' }}
+                    >
                       {action.title}
                     </h3>
-                    <p className="text-xs md:text-base text-gray-400 mb-1 md:mb-4 hidden md:block">{action.subtitle}</p>
-                    <p className="text-xs md:text-sm text-gray-500 group-hover:text-amber-300 transition-colors font-mono truncate">
+                    <p 
+                      className="text-xs md:text-base mb-1 md:mb-4 hidden md:block"
+                      style={{ color: isLight ? '#4b5563' : '#9ca3af' }}
+                    >
+                      {action.subtitle}
+                    </p>
+                    <p 
+                      className="text-xs md:text-sm group-hover:text-amber-300 transition-colors font-mono truncate"
+                      style={{ color: isLight ? '#6b7280' : '#9ca3af' }}
+                    >
                       {action.email}
                     </p>
 

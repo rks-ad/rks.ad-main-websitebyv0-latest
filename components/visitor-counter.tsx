@@ -87,6 +87,21 @@ export function VisitorCounter() {
     }
   }, [totalHits, displayHits])
 
+  const [isLight, setIsLight] = useState(false)
+
+  useEffect(() => {
+    const main = document.querySelector('main')
+    setIsLight(main?.getAttribute('data-theme') === 'light')
+
+    const handleThemeChange = () => {
+      const main = document.querySelector('main')
+      setIsLight(main?.getAttribute('data-theme') === 'light')
+    }
+
+    window.addEventListener('themechange', handleThemeChange)
+    return () => window.removeEventListener('themechange', handleThemeChange)
+  }, [])
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -96,9 +111,15 @@ export function VisitorCounter() {
     >
       <div className="relative group">
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
-        <div className="relative bg-gradient-to-br from-slate-900 to-slate-950 dark:from-slate-900 dark:to-slate-950 light:from-gray-100 light:to-gray-50 rounded-2xl p-3 md:p-4 border border-amber-500/20 shadow-lg">
+        <div 
+          className="relative rounded-2xl p-3 md:p-4 border border-amber-500/20 shadow-lg"
+          style={{
+            backgroundColor: isLight ? '#f3f4f6' : 'rgb(15, 23, 42)',
+            color: isLight ? '#0f172a' : '#ffffff',
+          }}
+        >
           <div className="text-center whitespace-nowrap">
-            <p className="text-xs md:text-xs text-gray-400 dark:text-gray-400 light:text-gray-600 mb-1">📊 Total Hits</p>
+            <p className="text-xs md:text-xs mb-1" style={{ color: isLight ? '#4b5563' : '#9ca3af' }}>📊 Total Hits</p>
             <motion.p
               key={displayHits}
               initial={{ y: 10, opacity: 0 }}

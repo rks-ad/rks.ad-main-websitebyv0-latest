@@ -16,14 +16,43 @@ export default function Home() {
           color: #0f172a !important;
         }
         main[data-theme="light"] * {
-          color: #0f172a;
+          color: #0f172a !important;
+        }
+        main[data-theme="light"] p,
+        main[data-theme="light"] span,
+        main[data-theme="light"] h1,
+        main[data-theme="light"] h2,
+        main[data-theme="light"] h3,
+        main[data-theme="light"] div {
+          color: #0f172a !important;
+        }
+        main[data-theme="light"] a {
+          color: #0f172a !important;
+        }
+        main[data-theme="light"] button {
+          color: inherit !important;
+        }
+        main[data-theme="light"] .text-gray-400 {
+          color: #4b5563 !important;
+        }
+        main[data-theme="light"] .text-gray-500 {
+          color: #6b7280 !important;
+        }
+        main[data-theme="light"] .text-gray-600 {
+          color: #4b5563 !important;
+        }
+        main[data-theme="light"] .text-white {
+          color: #0f172a !important;
         }
         main[data-theme="light"] footer {
           background-color: #f3f4f6 !important;
           border-top-color: #d1d5db !important;
         }
         main[data-theme="light"] footer * {
-          color: #0f172a;
+          color: #0f172a !important;
+        }
+        main[data-theme="light"] section {
+          background-color: transparent !important;
         }
         main[data-theme="dark"] {
           background-color: #0f172a;
