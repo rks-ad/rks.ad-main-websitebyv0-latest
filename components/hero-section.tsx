@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { Star } from 'lucide-react'
+import { StickyLogo } from './sticky-logo'
 
 const letterData = [
   { letter: 'R', word: 'Ravi', color: 'from-amber-400 to-yellow-500' },
@@ -20,20 +21,14 @@ export function HeroSection() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start pt-8 md:justify-center md:pt-0 px-4 relative">
+      <StickyLogo />
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="text-center w-full"
       >
-        {/* Logo Placeholder */}
-        <div className="mb-4 md:mb-6">
-          <img
-            src="/logo.svg"
-            alt="RKS.Ad Logo"
-            className="h-20 md:h-28 mx-auto"
-          />
-        </div>
 
         {/* Main Domain Name - Mobile Optimized */}
         <div className="mb-4 md:mb-8">
