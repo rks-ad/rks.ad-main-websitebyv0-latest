@@ -20,28 +20,31 @@ export function ThemeToggle() {
   const applyTheme = (newTheme: 'light' | 'dark') => {
     const html = document.documentElement
     const main = document.querySelector('main')
+    const footer = document.querySelector('footer')
     
     if (newTheme === 'light') {
       html.style.colorScheme = 'light'
-      html.style.backgroundColor = 'white'
-      html.style.color = '#1e293b'
-      document.body.style.backgroundColor = 'white'
-      document.body.style.color = '#1e293b'
+      document.body.style.backgroundColor = '#ffffff'
       if (main) {
-        main.style.backgroundColor = 'white'
-        main.style.color = '#1e293b'
+        main.style.backgroundColor = '#ffffff !important'
+        main.style.color = '#0f172a !important'
         main.setAttribute('data-theme', 'light')
+      }
+      if (footer) {
+        footer.style.backgroundColor = '#f3f4f6 !important'
+        footer.style.borderTopColor = '#d1d5db'
       }
     } else {
       html.style.colorScheme = 'dark'
-      html.style.backgroundColor = '#0f172a'
-      html.style.color = 'white'
       document.body.style.backgroundColor = '#0f172a'
-      document.body.style.color = 'white'
       if (main) {
         main.style.backgroundColor = '#0f172a'
-        main.style.color = 'white'
+        main.style.color = '#ffffff'
         main.setAttribute('data-theme', 'dark')
+      }
+      if (footer) {
+        footer.style.backgroundColor = 'rgba(15, 23, 42, 0.5)'
+        footer.style.borderTopColor = '#1e293b'
       }
     }
     localStorage.setItem('theme', newTheme)
@@ -50,6 +53,13 @@ export function ThemeToggle() {
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
     setTheme(newTheme)
+    
+    // Update data-theme immediately
+    const main = document.querySelector('main')
+    if (main) {
+      main.setAttribute('data-theme', newTheme)
+    }
+    
     applyTheme(newTheme)
     // Emit custom event for page to listen
     window.dispatchEvent(new CustomEvent('themechange', { detail: { theme: newTheme } }))

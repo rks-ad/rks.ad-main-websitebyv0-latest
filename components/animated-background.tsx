@@ -112,10 +112,27 @@ export function AnimatedBackground() {
     }
   }, [])
 
+  const [isLight, setIsLight] = useState(false)
+
+  useEffect(() => {
+    const main = document.querySelector('main')
+    const isLightMode = main?.getAttribute('data-theme') === 'light'
+    setIsLight(isLightMode)
+
+    const handleThemeChange = () => {
+      const main = document.querySelector('main')
+      setIsLight(main?.getAttribute('data-theme') === 'light')
+    }
+
+    window.addEventListener('themechange', handleThemeChange)
+    return () => window.removeEventListener('themechange', handleThemeChange)
+  }, [])
+
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-0 opacity-50"
+      className="fixed inset-0 z-0"
+      style={{ opacity: isLight ? 0 : 0.5 }}
     />
   )
 }

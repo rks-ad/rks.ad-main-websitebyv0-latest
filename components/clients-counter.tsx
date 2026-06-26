@@ -36,7 +36,10 @@ export function ClientsCounter() {
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
-      className="py-3 md:py-6 px-4 bg-gradient-to-r from-amber-500/5 via-purple-500/5 to-cyan-500/5 border-y border-gray-800"
+      className="py-3 md:py-6 px-4 bg-gradient-to-r from-amber-500/3 via-purple-500/3 to-cyan-500/3 border-y border-gray-800"
+      style={{
+        backgroundColor: 'transparent',
+      }}
     >
       <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 text-center">

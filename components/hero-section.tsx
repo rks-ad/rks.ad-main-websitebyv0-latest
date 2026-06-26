@@ -177,6 +177,21 @@ export function HeroSection() {
         >
           💼 Legal Counsel | 🎯 Professional | ✅ 1100+ Clients
         </motion.p>
+
+        {/* Practice Areas */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="flex flex-wrap justify-center gap-1.5 md:gap-2 text-xs md:text-sm mb-0 md:mb-2"
+        >
+          <span className="px-2 md:px-3 py-0.5 bg-blue-500/10 border border-blue-500/30 rounded-full">⚖️ Civil</span>
+          <span className="px-2 md:px-3 py-0.5 bg-red-500/10 border border-red-500/30 rounded-full">🚔 Criminal</span>
+          <span className="px-2 md:px-3 py-0.5 bg-purple-500/10 border border-purple-500/30 rounded-full">💼 Corporate</span>
+          <span className="px-2 md:px-3 py-0.5 bg-pink-500/10 border border-pink-500/30 rounded-full">👨‍👩‍👧‍👦 Family</span>
+          <span className="px-2 md:px-3 py-0.5 bg-amber-500/10 border border-amber-500/30 rounded-full">🏛️ Tribunals</span>
+          <span className="px-2 md:px-3 py-0.5 bg-green-500/10 border border-green-500/30 rounded-full">🏢 High Court</span>
+        </motion.div>
       </motion.div>
     </div>
   )
