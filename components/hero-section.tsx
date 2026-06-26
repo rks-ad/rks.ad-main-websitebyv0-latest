@@ -244,7 +244,7 @@ export function HeroSection() {
               </motion.div>
 
               {/* High Court */}
-              <motion.div className="col-span-2 md:col-span-1 hover:scale-105 transition-transform duration-300 cursor-pointer group">
+              <motion.div className="hover:scale-105 transition-transform duration-300 cursor-pointer group">
                 <motion.div
                   whileHover={{ rotate: -10 }}
                   className="text-4xl md:text-6xl mb-2 group-hover:scale-110 transition-transform duration-300"
