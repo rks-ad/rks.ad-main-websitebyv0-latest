@@ -7,9 +7,51 @@ __v0_jsx-dev-runtime.ts
 .vercel/
 
 # Environment variables
-.env*.local
+.env
+.env.local
+.env.*.local
 
-# Common ignores
+# Dependencies
 node_modules
+.pnp
+.pnp.js
+
+# Next.js build files
 .next/
+out/
+build/
+
+# Production
+dist/
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+*.sublime-workspace
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Testing
+coverage
+.nyc_output
+
+# Docker
+docker-compose.override.yml
+
+# Screenshots/temp files
+*.png
+*.jpg
+website.png
+hover-effect.png
+action-buttons.png
