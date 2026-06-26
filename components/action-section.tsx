@@ -58,18 +58,13 @@ export function ActionSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1, duration: 0.6 }}
-                whileHover={{ y: -8 }}
+                whileHover={{ y: -5 }}
                 className="group relative"
               >
-                {/* Gradient background blur */}
-                <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 rounded-2xl blur-xl transition-opacity duration-300" style={{
-                  backgroundImage: `linear-gradient(135deg, ${action.color.split(' ')[1]} 0%, ${action.color.split(' ')[2]} 100%)`
-                }}></div>
-
                 {/* Card */}
-                <div className="relative bg-slate-900/50 backdrop-blur-sm border border-gray-700 group-hover:border-amber-500/50 rounded-xl md:rounded-2xl p-3 md:p-8 transition-all duration-300 overflow-hidden">
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 opacity-0 group-hover:opacity-20 bg-gradient-to-r from-transparent via-white to-transparent"></div>
+                <div className="relative bg-slate-900/80 backdrop-blur-sm border border-gray-700 group-hover:border-amber-500/80 rounded-xl md:rounded-2xl p-3 md:p-8 transition-all duration-300 overflow-hidden">
+                  {/* Shine effect on hover */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 opacity-0 group-hover:opacity-30 bg-gradient-to-r from-transparent via-amber-200 to-transparent"></div>
 
                   {/* Content */}
                   <div className="relative z-10">

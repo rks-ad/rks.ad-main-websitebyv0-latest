@@ -173,7 +173,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-xs md:text-base text-gray-400 mb-2 md:mb-4 max-w-2xl"
+          className="text-xs md:text-base text-gray-400 mb-0.5 md:mb-2 max-w-2xl"
         >
           💼 Legal Counsel | 🎯 Professional | ✅ 1100+ Clients
         </motion.p>

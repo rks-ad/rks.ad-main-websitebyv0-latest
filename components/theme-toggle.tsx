@@ -19,12 +19,30 @@ export function ThemeToggle() {
 
   const applyTheme = (newTheme: 'light' | 'dark') => {
     const html = document.documentElement
+    const main = document.querySelector('main')
+    
     if (newTheme === 'light') {
-      html.classList.add('light')
-      html.classList.remove('dark')
+      html.style.colorScheme = 'light'
+      html.style.backgroundColor = 'white'
+      html.style.color = '#1e293b'
+      document.body.style.backgroundColor = 'white'
+      document.body.style.color = '#1e293b'
+      if (main) {
+        main.style.backgroundColor = 'white'
+        main.style.color = '#1e293b'
+        main.setAttribute('data-theme', 'light')
+      }
     } else {
-      html.classList.add('dark')
-      html.classList.remove('light')
+      html.style.colorScheme = 'dark'
+      html.style.backgroundColor = '#0f172a'
+      html.style.color = 'white'
+      document.body.style.backgroundColor = '#0f172a'
+      document.body.style.color = 'white'
+      if (main) {
+        main.style.backgroundColor = '#0f172a'
+        main.style.color = 'white'
+        main.setAttribute('data-theme', 'dark')
+      }
     }
     localStorage.setItem('theme', newTheme)
   }
@@ -33,6 +51,8 @@ export function ThemeToggle() {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
     setTheme(newTheme)
     applyTheme(newTheme)
+    // Emit custom event for page to listen
+    window.dispatchEvent(new CustomEvent('themechange', { detail: { theme: newTheme } }))
   }
 
   if (!mounted) return null

@@ -36,46 +36,48 @@ export function ClientsCounter() {
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
-      className="py-6 md:py-8 px-4 bg-gradient-to-r from-amber-500/5 via-purple-500/5 to-cyan-500/5 border-y border-gray-800"
+      className="py-3 md:py-6 px-4 bg-gradient-to-r from-amber-500/5 via-purple-500/5 to-cyan-500/5 border-y border-gray-800"
     >
       <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 text-center">
           {/* Clients Served */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0 }}
-          >
-            <motion.div className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent mb-2">
+          <div className="hover:scale-105 transition-transform duration-300">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0 }}
+              className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent mb-2"
+            >
               {clientCount.toLocaleString()}+
             </motion.div>
             <p className="text-gray-400 text-sm md:text-base">👥 Clients Served</p>
-          </motion.div>
+          </div>
 
           {/* Years Experience */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <div className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2">
+          <div className="hover:scale-105 transition-transform duration-300">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-2"
+            >
               15+
-            </div>
+            </motion.div>
             <p className="text-gray-400 text-sm md:text-base">📅 Years Experience</p>
-          </motion.div>
+          </div>
 
           {/* Cases Won */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="col-span-2 md:col-span-1"
-          >
-            <div className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
+          <div className="col-span-2 md:col-span-1 hover:scale-105 transition-transform duration-300">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2"
+            >
               980+
-            </div>
+            </motion.div>
             <p className="text-gray-400 text-sm md:text-base">🏆 Cases Won</p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </motion.div>
