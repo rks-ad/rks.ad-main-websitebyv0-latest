@@ -32,21 +32,21 @@ export function ActionSection() {
   ]
 
   return (
-    <section className="py-12 md:py-24 px-4">
+    <section className="py-8 md:py-16 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="max-w-6xl mx-auto"
       >
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-2 md:mb-4 bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">
-          🎯 Connect With Me
+        <h2 className="text-2xl md:text-5xl font-bold text-center mb-2 md:mb-4 bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">
+          🎯 Connect
         </h2>
-        <p className="text-gray-400 text-center mb-8 md:mb-16 text-sm md:text-base">
-          Multiple ways to reach out and get legal assistance
+        <p className="text-gray-400 text-center mb-4 md:mb-12 text-xs md:text-base">
+          Reach out for legal assistance
         </p>
 
-        <div className="grid md:grid-cols-3 gap-4 md:gap-8">
+        <div className="grid md:grid-cols-3 gap-3 md:gap-8">
           {actions.map((action, idx) => {
             const Icon = action.icon
             return (
@@ -67,7 +67,7 @@ export function ActionSection() {
                 }}></div>
 
                 {/* Card */}
-                <div className="relative bg-slate-900/50 backdrop-blur-sm border border-gray-700 group-hover:border-amber-500/50 rounded-2xl p-4 md:p-8 transition-all duration-300 overflow-hidden">
+                <div className="relative bg-slate-900/50 backdrop-blur-sm border border-gray-700 group-hover:border-amber-500/50 rounded-xl md:rounded-2xl p-3 md:p-8 transition-all duration-300 overflow-hidden">
                   {/* Shine effect */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 opacity-0 group-hover:opacity-20 bg-gradient-to-r from-transparent via-white to-transparent"></div>
 
@@ -75,22 +75,22 @@ export function ActionSection() {
                   <div className="relative z-10">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
-                      className={`w-12 md:w-16 h-12 md:h-16 rounded-full bg-gradient-to-br ${action.color} flex items-center justify-center mb-3 md:mb-6 group-hover:shadow-lg transition-shadow`}
+                      className={`w-10 md:w-16 h-10 md:h-16 rounded-full bg-gradient-to-br ${action.color} flex items-center justify-center mb-2 md:mb-6 group-hover:shadow-lg transition-shadow`}
                     >
-                      <Icon className="w-6 md:w-8 h-6 md:h-8 text-white" />
+                      <Icon className="w-5 md:w-8 h-5 md:h-8 text-white" />
                     </motion.div>
 
-                    <h3 className="text-lg md:text-2xl font-bold text-white mb-1 md:mb-2 group-hover:text-amber-400 transition-colors">
+                    <h3 className="text-base md:text-2xl font-bold text-white mb-1 md:mb-2 group-hover:text-amber-400 transition-colors">
                       {action.title}
                     </h3>
-                    <p className="text-xs md:text-base text-gray-400 mb-2 md:mb-4">{action.subtitle}</p>
-                    <p className="text-xs md:text-sm text-gray-500 group-hover:text-amber-300 transition-colors font-mono">
+                    <p className="text-xs md:text-base text-gray-400 mb-1 md:mb-4 hidden md:block">{action.subtitle}</p>
+                    <p className="text-xs md:text-sm text-gray-500 group-hover:text-amber-300 transition-colors font-mono truncate">
                       {action.email}
                     </p>
 
-                    {/* Arrow indicator */}
+                    {/* Arrow indicator - hidden on mobile */}
                     <motion.div
-                      className="mt-6 flex items-center gap-2 text-amber-400"
+                      className="mt-2 md:mt-6 flex items-center gap-2 text-amber-400 hidden md:flex"
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
